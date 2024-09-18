@@ -6,7 +6,7 @@ using std::cout, std::endl, std::string;
 
 namespace WeatherSpace {
 class IWeatherSensor {
- public:        
+  public:
         virtual double TemperatureInC() const = 0;
         virtual int Precipitation() const = 0;
         virtual int Humidity() const = 0;
@@ -19,34 +19,34 @@ class IWeatherSensor {
 /// without needing the actual Sensor during development
 
 class SensorStub : public IWeatherSensor {
-    private:
-        int m_humidity;
-        int m_precipitation;
-        double m_temperature;
-        int m_windSpeed;
+  private:
+    int m_humidity;
+    int m_precipitation;
+    double m_temperature;
+    int m_windSpeed;
 
-    public:
-        SensorStub(int humidity, int precipitation, double temperature, int windspeed) :
-            m_humidity(humidity), 
-            m_precipitation(precipitation), 
-            m_temperature(temperature), 
-            m_windSpeed(windspeed) {}
+  public:
+    SensorStub(int humidity, int precipitation, double temperature, int windspeed) :
+        m_humidity(humidity),
+        m_precipitation(precipitation),
+        m_temperature(temperature),
+        m_windSpeed(windspeed) {}
 
-        int Humidity() const override {
-            return m_humidity;
-        }
+    int Humidity() const override {
+        return m_humidity;
+    }
 
-        int Precipitation() const override {
-            return m_precipitation;
-        }
+    int Precipitation() const override {
+        return m_precipitation;
+    }
 
-        double TemperatureInC() const override {
-            return m_temperature;
-        }
+    double TemperatureInC() const override {
+        return m_temperature;
+    }
 
-        int WindSpeedKMPH() const override {
-            return m_windSpeed;
-        }
+    int WindSpeedKMPH() const override {
+        return m_windSpeed;
+    }
 };
 
 // This is a function to predict the weather, based on readings
