@@ -6,7 +6,7 @@ using std::cout, std::endl, std::string;
 
 namespace WeatherSpace {
 class IWeatherSensor {
-  public:
+ public:
         virtual double TemperatureInC() const = 0;
         virtual int Precipitation() const = 0;
         virtual int Humidity() const = 0;
@@ -19,13 +19,13 @@ class IWeatherSensor {
 /// without needing the actual Sensor during development
 
 class SensorStub : public IWeatherSensor {
-  private:
+ private:
     int m_humidity;
     int m_precipitation;
     double m_temperature;
     int m_windSpeed;
 
-  public:
+ public:
     SensorStub(int humidity, int precipitation, double temperature, int windspeed) :
         m_humidity(humidity),
         m_precipitation(precipitation),

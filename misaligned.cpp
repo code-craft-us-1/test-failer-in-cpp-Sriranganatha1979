@@ -10,7 +10,7 @@ int numberOfMinorColors = sizeof(minorColor) / sizeof(minorColor[0]);
 
 
 std::string formatColorMap(int colorCode, const char* majorColor, const char* minorColor) {
-        std::string combinedColors = 
+        std::string combinedColors =
             std::to_string(colorCode) + " | " + majorColor + " | " + minorColor + "\n";
         return combinedColors;
 }
